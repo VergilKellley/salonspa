@@ -1,0 +1,1367 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  background: #000;
+  margin: 0;
+  padding: 0;
+  width: 100vw !important;
+}
+
+:root {
+  --accent-color: crimson;
+}
+
+/*******************
+mobile nav
+*******************/
+#mobile-nav {
+  height: 10vh;
+  background: #000;
+  display: none;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  width: 50%;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: auto;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  /*******************************************
+  https://www.youtube.com/watch?v=H4MkGzoACpQ
+  *******************************************/
+  .line {
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    margin: 5px;
+  }
+
+  #mobile-nav {
+    display: block;
+    position: relative;
+  }
+
+  .hamburger {
+    position: absolute;
+    cursor: pointer;
+    right: 5%;
+    top: 50%;
+    transform: translate(-5%, -50%);
+    z-index: 13;
+    display: block;
+  }
+  .nav-links {
+    position: fixed;
+    background: var(--accent-color);
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    z-index: 12;
+    clip-path: circle(100px at 90% -25%);
+    -webkit-clip-path: circle(1500px 90% -25%);
+    transition: all 1s ease-out;
+    pointer-events: none;
+  }
+
+  .nav-links.open {
+    clip-path: circle(100px at 90% -25%);
+    -webkit-clip-path: circle(1500px at 90% -25%);
+    pointer-events: all;
+  }
+
+  .nav-links li {
+    opacity: 0;
+  }
+
+  .nav-links li a {
+    font-size: 25px;
+    transition: color 0.5s;
+  }
+
+  .nav-links li a:hover {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .current-mobile {
+    color: rgba(255, 255, 255, 0.5) !important;
+  }
+
+  .nav-links li:nth-child(1) {
+    transition: all 0.5s ease 0.2s;
+  }
+
+  .nav-links li:nth-child(2) {
+    transition: all 0.5s ease 0.4s;
+  }
+
+  .nav-links li:nth-child(3) {
+    transition: all 0.5s ease 0.6s;
+  }
+
+  li.fade {
+    opacity: 1;
+  }
+
+  #nav {
+    display: none;
+  }
+
+  #about-nav {
+    display: none;
+  }
+}
+
+/***********************
+desktop nav
+***********************/
+
+#nav {
+  /*display: grid;*/
+  grid-area: nav;
+  background-color: rgba(0, 0, 0, 0.7);
+  top: 0;
+  position: fixed;
+  z-index: 10;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+}
+
+#nav ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+
+#nav ul li {
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  font-size: 2vw;
+}
+
+#nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.5s;
+}
+
+#nav ul li a:hover {
+  color: var(--accent-color);
+}
+
+.current {
+  color: var(--accent-color) !important;
+}
+
+#grid-container-1 {
+  position: relative;
+  display: grid;
+  background: #000;
+  grid-template-columns: 15% 30% 30% auto;
+  grid-template-rows: minmax(10% auto);
+  grid-template-areas:
+    "nav nav nav nav"
+    "spaAngelText landingPagePtext model-0 callNowPhoneImg";
+  height: 100vh;
+  width: 100vw;
+  justify-items: center;
+  align-items: center;
+}
+
+#spaAngelText {
+  grid-area: spaAngelText;
+}
+
+#landingPagePtext {
+  grid-area: landingPagePtext;
+}
+
+#model-0 {
+  grid-area: model-0;
+}
+
+#callNowPhoneImg {
+  grid-area: callNowPhoneImg;
+}
+
+#grid-container-1 div {
+  position: relative;
+  width: 30vw;
+  text-align: center;
+}
+
+#grid-container-1 div h3 {
+  position: absolute;
+  left: 31%;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 2.5vw;
+  transform: rotate(-90deg);
+  text-transform: uppercase;
+  margin-top: 0;
+}
+
+#angel {
+  color: var(--accent-color);
+}
+
+#grid-container-1 div h1 {
+  position: absolute;
+  left: -5%;
+  color: #fff;
+  font-size: 10vw;
+  margin-top: -57%;
+  transform: rotate(-90deg);
+}
+
+#grid-container-1 div p {
+  position: absolute;
+  width: 20vw;
+  left: 20%;
+  color: #fff;
+  font-size: 1.5vw;
+  text-align: left;
+  margin-top: -45%;
+}
+
+#grid-container-1 #model-0 {
+  position: absolute;
+  bottom: 0;
+}
+
+#grid-container-1 #phone4 {
+  position: absolute;
+  top: 30%;
+  right: 10%;
+  width: 120px;
+  height: 120px;
+  padding: 10px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  transition: background 0.5s;
+}
+
+#grid-container-1 #phone4:hover {
+  background: #fff;
+  cursor: pointer;
+}
+
+#callNow {
+  position: absolute;
+  right: 9.3%;
+  font-size: 2.5vw;
+  top: 54%;
+  color: #fff;
+  transition: color 0.5s;
+}
+
+#callNow:hover {
+  color: var(--accent-color);
+}
+
+#grid-container-2 {
+  background: url(images/salon200.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  margin: 30vh 0 30vh 0;
+  justify-content: center;
+}
+
+#grid-container-2 .container {
+  background-image: url(images/redHair.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 75vh;
+  max-width: 60vw;
+  position: relative;
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+  grid-template-rows: 150px 150px 150px;
+  grid-template-areas:
+    "card-1 circleText card-4"
+    "card-2 circleText card-5"
+    "card-3 circleText card-6";
+  margin-left: 7vw;
+  margin: 15vh auto;
+}
+
+#grid-container-2 .container .card-1 {
+  grid-area: card-1;
+}
+
+#grid-container-2 .container .card-2 {
+  grid-area: card-2;
+}
+#grid-container-2 .container .card-3 {
+  grid-area: card-3;
+}
+
+#grid-container-2 .container .card-4 {
+  grid-area: card-4;
+}
+
+#grid-container-2 .container .card-5 {
+  grid-area: card-5;
+}
+
+#grid-container-2 .container .card-6 {
+  grid-area: card-6;
+}
+
+#circleText p {
+  position: absolute;
+  bottom: 5%;
+  color: #fff;
+}
+
+/*#circleAhText {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  top: -40%;
+  left: 50%;
+  transform: translateX(-40%);
+  border-radius: 50%;
+  border: 5px solid var(--accent-color);
+  background: #fff;
+  color: #fff;
+}
+
+#circleAhText h3 {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  font-size: 2.5vw;
+  color: #333;
+  transform: translateX(-50%);
+}*/
+
+#grid-container-2 .container .card {
+  position: relative;
+  left: -130%;
+  top: -7%;
+}
+
+#grid-container-2 .container .cardsRightSide {
+  position: relative;
+  left: 30%;
+}
+
+#grid-container-2 .container .card .face {
+  width: 21vw;
+  height: 14vh;
+  transition: 0.5s;
+}
+
+#grid-container-2 .container .card .face.face1 {
+  position: relative;
+  background: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  transform: translateY(7vh);
+}
+
+#grid-container-2 .container .card:hover .face.face1 {
+  background: var(--accent-color);
+  transform: translateY(0);
+}
+
+#grid-container-2 .container .card .face.face2 {
+  position: relative;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+  transform: translateY(-7vh);
+}
+
+#grid-container-2 .container .card:hover .face.face2 {
+  transform: translateY(0);
+}
+
+#grid-container-2 .container .card .face.face2 .content p {
+  margin: 0;
+  padding: 0;
+}
+
+#grid-container-2 .container .card .face.face1 .content {
+  opacity: 0.2;
+  transition: 0.5s;
+}
+
+#grid-container-2 .container .card:hover .face.face1 .content {
+  opacity: 1;
+}
+
+#grid-container-2 .container .card .face.face1 .content h3 {
+  margin: 10px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+  font-size: 1.5vw;
+}
+
+/***********************
+second fold mobile
+***********************/
+
+#grid-container-2 {
+  background: url(../images/salon200.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  margin: 30vh 0 30vh 0;
+  justify-content: center;
+}
+
+#grid-container-2 .container {
+  background-image: url(../images/redHair.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 75vh;
+  max-width: 60vw;
+  position: relative;
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+  grid-template-rows: 150px 150px 150px;
+  grid-template-areas:
+    "card-1 circleText card-4"
+    "card-2 circleText card-5"
+    "card-3 circleText card-6";
+  margin-left: 7vw;
+  margin: 15vh auto;
+}
+
+#grid-container-2 .container .card-1 {
+  grid-area: card-1;
+}
+
+#grid-container-2 .container .card-2 {
+  grid-area: card-2;
+}
+#grid-container-2 .container .card-3 {
+  grid-area: card-3;
+}
+
+#grid-container-2 .container .card-4 {
+  grid-area: card-4;
+}
+
+#grid-container-2 .container .card-5 {
+  grid-area: card-5;
+}
+
+#grid-container-2 .container .card-6 {
+  grid-area: card-6;
+}
+
+#circleText p {
+  position: absolute;
+  bottom: 5%;
+  color: #fff;
+}
+
+#circleAhText {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  top: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  border: 5px solid var(--accent-color);
+  background: #fff;
+  color: #fff;
+}
+
+#circleAhText h3 {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  font-size: 2.5vw;
+  color: #333;
+  transform: translateX(-50%);
+}
+
+#grid-container-2 .container .card {
+  position: relative;
+  left: -90%;
+  top: -7%;
+}
+
+#grid-container-2 .container .cardsRightSide {
+  position: relative;
+  left: 30%;
+}
+
+#grid-container-2 .container .card .face {
+  width: 21vw;
+  height: 14vh;
+  transition: 0.5s;
+}
+
+#grid-container-2 .container .card .face.face1 {
+  position: relative;
+  background: #333;
+  display: flex;
+  /* justify-content: center;
+  align-items: center;*/
+  z-index: 1;
+  transform: translateY(7vh);
+}
+
+#grid-container-2 .container .card:hover .face.face1 {
+  background: var(--accent-color);
+  transform: translateY(0);
+}
+
+#grid-container-2 .container .card .face.face2 {
+  position: relative;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+  transform: translateY(-7vh);
+}
+
+#grid-container-2 .container .card:hover .face.face2 {
+  transform: translateY(0);
+}
+
+#grid-container-2 .container .card .face.face2 .content p {
+  margin: 0;
+  padding: 0;
+}
+
+#grid-container-2 .container .card .face.face1 .content {
+  opacity: 0.2;
+  transition: 0.5s;
+}
+
+#grid-container-2 .container .card:hover .face.face1 .content {
+  opacity: 1;
+}
+
+#grid-container-2 .container .card .face.face1 .content h3 {
+  margin: 10px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+  font-size: 1.5vw;
+}
+
+#part-6 {
+  position: relative;
+  display: grid;
+  width: 100vw;
+  grid-gap: 20px;
+  justify-items: center;
+  justify-content: center;
+  grid-template-columns: 30% 30%;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "styleGalleryText styleGalleryText"
+    "gallery-1 gallery-2";
+}
+
+#part-6 .container-1 {
+  grid-area: gallery-1;
+  border: var(--accent-color) solid 3px;
+  justify-content: center;
+}
+
+#part-6 .container-2 {
+  grid-area: gallery-2;
+  border: var(--accent-color) solid 3px;
+  justify-content: center;
+}
+
+#style-gallery {
+  grid-area: styleGalleryText;
+  margin: 0 auto;
+  max-width: 70vw;
+  text-align: center;
+}
+
+#style-gallery h2 {
+  color: #fff;
+  font-size: 3vw;
+  padding-bottom: 1vh;
+}
+
+#style-gallery p {
+  color: #fff;
+  font-size: 1.5vw;
+  padding-bottom: 3vh;
+  padding-top: 1.5vh;
+}
+
+#style-gallery a {
+  text-decoration: none;
+  font-size: 2.5vw;
+}
+
+#part-6 .container-2 {
+  position: relative;
+  display: inline-block;
+  right: 0;
+}
+
+.main-img img,
+.main-img .imgs,
+.imgs img,
+.imgs2 img {
+  width: 100%;
+}
+
+.imgs,
+.imgs2 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 5px;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in 1 forwards;
+}
+
+/*****************
+ABOUT PAGE
+*****************/
+
+#aboutUs-container {
+  position: relative;
+  width: 70vw;
+  top: 15vh;
+  height: 80vh;
+  margin: 0 auto;
+}
+
+#aboutOverlay {
+  position: absolute;
+  background-color: rgba(17, 5, 5, 0.8);
+  width: 70vw;
+  height: 80vh;
+  z-index: 1;
+}
+
+#aboutUs-container img {
+  position: absolute;
+  width: 69.5vw;
+  height: 79vh;
+  z-index: -2;
+}
+
+#aboutUs-container h5 {
+  position: absolute;
+  z-index: 2;
+  margin-top: 8vh;
+  font-size: 1.5vw;
+  padding-left: 10%;
+  color: #fff;
+}
+
+#aboutUs-container h2 {
+  position: absolute;
+  color: #fff;
+  top: 12vh;
+  padding-left: 10%;
+  font-size: 4vw;
+  z-index: 2;
+}
+
+#aboutUs-container p {
+  position: relative;
+  top: 24vh;
+  color: #fff;
+  font-size: 1.5vw;
+  width: 80%;
+  margin: 0 auto;
+  text-align: justify;
+  z-index: 2;
+}
+
+#ourTeam {
+  position: relative;
+  top: 50vh;
+  width: 70vw;
+  /*margin-left: 5vw;*/
+  /*margin-top: 20vh;*/
+  margin: 0 auto;
+  font-size: 3vw;
+}
+
+#ourTeam h2 {
+  color: var(--accent-color);
+  font-weight: var(--fw-bold);
+}
+
+#ourTeam h3 {
+  color: #fff;
+}
+
+#part-5 {
+  display: grid;
+  max-width: 70vw;
+  height: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 3fr));
+  grid-template-rows: 450px 450px;
+  grid-gap: 10px;
+  justify-content: center;
+  margin: 10vh auto;
+}
+
+.card-content {
+  text-align: center;
+  position: relative;
+  padding: 13em 5em;
+  transition: transform 3s;
+  background: rgba(255, 255, 255, 0.5);
+  transform-style: preserve-3d;
+}
+
+.card:hover .card-content {
+  transform: rotateY(0.5turn);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: #fff;
+  padding: 3em 2em;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  display: grid;
+  align-content: center;
+}
+
+.card-front {
+  background: var(--clr);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+  background-position: center;
+  padding-top: 2rem;
+  color: #fff;
+}
+
+.card-front-melvin {
+  grid-area: melvin;
+  background-image: url("../images/melvin.jpg");
+}
+
+.card-front-melissa {
+  grid-area: melissa;
+  background: url("../images/melissa.jpeg");
+}
+
+.card-front-david {
+  grid-area: david;
+  background-image: url("../images/david.jpeg");
+}
+
+.card-front-chris {
+  grid-area: david;
+  background-image: url("../images/chris.jpeg");
+}
+.card-front-susan {
+  grid-area: david;
+  background-image: url("../images/susan.jpeg");
+}
+.card-front-rachel {
+  grid-area: david;
+  background-image: url("../images/rachel.jpeg");
+}
+
+.card-front::before {
+  content: "";
+  position: absolute;
+  --spacer: 1em;
+  top: var(--spacer);
+  bottom: var(--spacer);
+  left: var(--spacer);
+  right: var(--spacer);
+  border: 3px solid currentColor;
+  transform: var(--level-one);
+}
+.card-title {
+  font-size: 6vh;
+  transform: translateZ(6rem);
+  margin-top: 18rem;
+}
+
+.card-subtitle {
+  transform: var(--level-one);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 0.75rem;
+  font-weight: var(--fw-bold);
+}
+
+.card-body {
+  transform: translateZ(3rem);
+  text-align: justify;
+}
+
+.card-back {
+  transform: rotateY(0.5turn);
+  background: var(--accent-color);
+}
+
+/******************
+Contact Form
+******************/
+
+.contact-form-body {
+  font-family: sans-serif;
+  display: flex;
+  margin-top: 100px;
+  justify-content: center;
+  height: 100vh;
+  /*background: #000;*/
+}
+
+.contact-container h1 {
+  padding: 16px;
+  font-size: 22px;
+  color: var(--accent-color);
+  text-align: center;
+}
+
+.contact-container .main-form {
+  background: #333;
+  padding: 32px 20px;
+}
+
+.contact-container .main-form .from-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.contact-container .main-form .from-group .gt-input {
+  width: 400px;
+  height: 48px;
+  padding: 0 20px;
+  font-size: 20px;
+  border: 0;
+}
+
+.contact-container .main-form .from-group .gt-text {
+  padding: 10px 20px;
+  height: 100px;
+  width: 100%;
+}
+
+.contact-container .main-form .from-group .gt-input:focus {
+  outline: none;
+}
+
+.contact-container .main-form .from-group label {
+  position: absolute;
+  font-size: 18px;
+  color: #aaa;
+  transition: all 0.4s;
+  top: 24px;
+  transform: translateY(-50%);
+  margin-left: 24px;
+  cursor: text;
+}
+
+/*********************
+Footer
+*********************/
+
+footer {
+  position: relative;
+  display: flex;
+  width: 100vw;
+  height: 15vh;
+  background: #fff;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-top: 10vh;
+  text-align: center;
+  align-items: center;
+}
+
+footer p {
+  color: #333;
+  width: 90vw;
+  margin: 0 auto;
+}
+
+footer p a {
+  display: inline;
+  text-decoration: none;
+}
+
+/*********************
+media queries 1130px
+*********************/
+
+@media (max-width: 1130px) {
+  /* second fold */
+
+  #circleAhText {
+    display: none;
+  }
+
+  #grid-container-2-wrapper {
+    width: 100vw;
+  }
+  #grid-container-2 {
+    display: block;
+    height: 175vh;
+  }
+  #grid-container-2 .container {
+    display: grid;
+    background: none;
+    top: -3.5vh;
+    grid-template-columns: 100vw;
+    grid-template-rows: minmax(50px, 50px);
+    max-width: 100vw;
+    grid-template-areas:
+      "circleAhText"
+      "card-1"
+      "card-2"
+      "card-3"
+      "card-4"
+      "card-5"
+      "card-6";
+  }
+
+  #circleAhText {
+    grid-area: circleAhText;
+  }
+  #grid-container-2 .container .card-1 {
+    grid-area: card-1;
+  }
+  #grid-container-2 .container .card-2 {
+    grid-area: card-2;
+  }
+  #grid-container-2 .container .card-3 {
+    grid-area: card-3;
+  }
+  #grid-container-2 .container .card-4 {
+    grid-area: card-4;
+  }
+  #grid-container-2 .container .card-5 {
+    grid-area: card-5;
+  }
+
+  #grid-container-2 .container .card-6 {
+    grid-area: card-6;
+  }
+
+  #grid-container-2 .container .card {
+    left: 0;
+    margin: 0 auto;
+    width: 60%;
+  }
+
+  #grid-container-2 .container .card {
+    left: 0;
+    margin: 0 auto;
+    width: 60%;
+    align-content: center;
+  }
+
+  #grid-container-2 .container .card .face {
+    width: 100%;
+  }
+
+  #part-6 {
+    margin-top: 30vh;
+  }
+
+  /*******************
+  third fold
+  *******************/
+
+  #part-6 {
+    position: relative;
+    display: grid;
+    width: 100vw;
+    grid-gap: 20px;
+    justify-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    grid-template-columns: 100%;
+    grid-template-rows: minmax(10vh 30vh);
+    grid-template-areas:
+      "styleGalleryText"
+      "gallery-1"
+      "gallery-2";
+  }
+
+  #part-6 .container-1 {
+    grid-area: gallery-1;
+    border: var(--accent-color) solid 3px;
+    justify-content: center;
+    max-width: 60%;
+  }
+
+  #part-6 .container-2 {
+    grid-area: gallery-2;
+    border: var(--accent-color) solid 3px;
+    justify-content: center;
+    max-width: 60%;
+  }
+
+  #style-gallery {
+    grid-area: styleGalleryText;
+    margin: 0 auto;
+    max-width: 60%;
+    text-align: center;
+  }
+
+  #style-gallery h2 {
+    color: #fff;
+    font-size: 25px;
+    padding-bottom: 1vh;
+  }
+
+  #style-gallery p {
+    color: #fff;
+    font-size: 18px;
+    padding-bottom: 3vh;
+    padding-top: 1.5vh;
+  }
+
+  #style-gallery a {
+    text-decoration: none;
+    font-size: 25px;
+  }
+
+  #part-6 .container-2 {
+    position: relative;
+    display: inline-block;
+    right: 0;
+    margin-top: 20%;
+  }
+
+  /* about page */
+  #aboutUs-container {
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  #aboutUs-container #aboutOverlay {
+    width: 100%;
+  }
+
+  #aboutUs-container img {
+    width: 100%;
+  }
+  #aboutUs-container h5 {
+    font-size: 20px;
+  }
+
+  #aboutUs-container h2 {
+    font-size: 30px;
+  }
+  #aboutUs-container p {
+    font-size: 14px;
+  }
+}
+
+/*********************
+media queries 1025px
+*********************/
+
+@media (max-width: 1025px) {
+  #grid-container-1 {
+    position: relative;
+    display: grid;
+    background: #000;
+    grid-template-columns: 25% 50% auto;
+    grid-template-rows: minmax(100%, 100%);
+    grid-template-areas:
+      "spaAngelText model-0 callNowPhoneImg"
+      "spaAngelText model-0 landingPagePText";
+    justify-items: center;
+    align-items: center;
+  }
+
+  #spaAngelText {
+    grid-area: spaAngelText;
+  }
+
+  #grid-container-1 div h1 {
+    position: absolute;
+    font-size: 9vw;
+    left: -10%;
+    margin-top: -10%;
+    justify-items: center;
+  }
+
+  #grid-container-1 div h3 {
+    left: 19%;
+    margin-top: 39%;
+    font-size: 2.5vw;
+  }
+
+  #landingPagePtext {
+    grid-area: landingPagePText;
+  }
+
+  #grid-container-1 div p {
+    left: 0%;
+    margin-top: -265px;
+    font-size: 20px;
+  }
+
+  #model-0 {
+    grid-area: model-0;
+    height: 75%;
+    width: 55%;
+    margin-left: 10%;
+    margin-top: -30%;
+  }
+
+  #callNowPhoneImg {
+    grid-area: callNowPhoneImg;
+  }
+
+  #grid-container-1 #phone4 {
+    width: 70px;
+    height: 70px;
+    top: 35%;
+    right: 14.5%;
+  }
+
+  #callNow {
+    right: 13%;
+    /* margin-top: 60%;*/
+  }
+}
+
+/************************
+media queries 850px
+************************/
+@media (max-width: 850px) {
+  /*first fold*/
+
+  #grid-container-1 div h1 {
+    position: absolute;
+    font-size: 12vw;
+    left: -29%;
+    margin-top: -10%;
+  }
+
+  #grid-container-1 div h3 {
+    left: 8%;
+    margin-top: 52%;
+    font-size: 3.5vw;
+  }
+}
+
+/**********************
+media queries 640px
+**********************/
+@media (max-width: 640px) {
+  #grid-container-1 div p {
+    display: none;
+  }
+
+  #callNow {
+    margin-top: 5%;
+    left: 75%;
+  }
+}
+
+/**********************
+media queries 550px
+**********************/
+@media (max-width: 550px) {
+  #grid-container-1 {
+    position: relative;
+    display: grid;
+    background: #000;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: minmax(50px, auto);
+  }
+
+  #spaAngelText {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  /* #grid-container-1 div {
+    width: 50%;
+  }*/
+
+  #grid-container-1 div h1 {
+    position: absolute;
+    font-size: 15vw;
+    left: -32%;
+    margin-top: 30%;
+  }
+
+  #grid-container-1 div h3 {
+    left: 27%;
+    margin-top: 120%;
+    font-size: 3.1vw;
+  }
+
+  #grid-container-1 div p {
+    display: none;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    left: -80%;
+    margin-top: -85%;
+    font-size: 15px;
+  }
+
+  #model-0 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+
+    height: 65%;
+
+    /*grid-area: model-0;
+    height: 65%;
+    width: 70% !important;
+    bottom: 0;
+    z-index: 5;*/
+  }
+
+  #phone4 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    margin-top: -40%;
+    left: 40%;
+    /*grid-area: phone4;
+    width: 70px;
+    height: 70px;
+    top: 15%;
+    right: 60%;
+    text-align: left;*/
+  }
+
+  #callNow {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    font-size: 5vw;
+    margin-top: -160%;
+    width: 200px;
+    left: 60%;
+    /*grid-area: callNow;
+    top: 17%;
+    font-size: 4vw;
+    left: 80%;*/
+  }
+}
+
+/**********************
+media queries cell phone
+**********************/
+@media (max-width: 320px) {
+  #grid-container-1 {
+    position: relative;
+    display: grid;
+    background: #000;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: minmax(100%, 100%);
+    grid-template-areas: "spaAngelText model-0";
+  }
+
+  #spaAngelText {
+    grid-area: spaAngelText;
+  }
+
+  #grid-container-1 div {
+    width: 50%;
+  }
+
+  #grid-container-1 div h1 {
+    position: absolute;
+    font-size: 15vw;
+    left: -132%;
+    margin-top: 0;
+  }
+
+  #grid-container-1 div h3 {
+    left: -130%;
+    width: 160px;
+    margin-top: 155%;
+    font-size: 4.5vw;
+  }
+
+  #grid-container-1 div p {
+    display: none;
+    left: 0%;
+    margin-top: -5px;
+    font-size: 20px;
+  }
+
+  #model-0 {
+    grid-area: model-0;
+    height: 85%;
+    width: 80% !important;
+    z-index: 5;
+  }
+
+  #phone4 {
+    display: none;
+    grid-area: phone4;
+    width: 70px;
+    height: 70px;
+    top: 15%;
+    right: 60%;
+  }
+
+  #callNow {
+    display: none;
+    grid-area: callNow;
+    top: 17%;
+    font-size: 4vw;
+    left: 80%;
+  }
+}
