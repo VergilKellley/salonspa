@@ -439,7 +439,7 @@ Medi Queries
       </div>
     <main class="animated bounceInLeft">
       <h2><span>angle</span>hair</h2>
-      <form class="contact-form" action="contactformPHP.php" method="post">
+      <form class="contact-form" action="contactform3.php" method="post">
         <input id="name" type="text" name="name" placeholder="First Name" required/>
         <input id="mail" type="text" name="mail" placeholder="Email" required/>
         <input id="mobile" type="tel" name="mobile" placeholder="Mobile" required/>
