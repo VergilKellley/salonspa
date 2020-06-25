@@ -728,7 +728,7 @@ ABOUT PAGE
 }
 .card-front-rachel {
   grid-area: david;
-  background-image: url("../images/rachel.jpeg");
+  background-image: url("../images/Rachel.jpeg");
 }
 
 .card-front::before {
@@ -976,7 +976,7 @@ media queries 1130px
 
   #style-gallery h2 {
     color: #fff;
-    font-size: 25px;
+    font-size: 3vw;
     padding-bottom: 1vh;
   }
 
@@ -1113,6 +1113,10 @@ media queries 850px
     left: 8%;
     margin-top: 52%;
     font-size: 3.5vw;
+  }
+
+  #style-gallery h2 {
+    font-size: 30px;
   }
 }
 
