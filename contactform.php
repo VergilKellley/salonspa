@@ -460,7 +460,7 @@ Medi Queries
       <p>
         Website designed by<a href="https://vergildkelley.com/" target="_blank">
           <span style="color: crimson;"
-            >Vergil D. Kelley Web Desing & Development</span
+            >Vergil D. Kelley Web Design & Development</span
           ></a
         >
         &copy 2020 All other trademarks, service marks and trade names
