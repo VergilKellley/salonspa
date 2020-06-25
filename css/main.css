@@ -41,92 +41,6 @@ mobile nav
   font-size: 16px;
 }
 
-@media screen and (max-width: 768px) {
-  /*******************************************
-  https://www.youtube.com/watch?v=H4MkGzoACpQ
-  *******************************************/
-  .line {
-    width: 30px;
-    height: 3px;
-    background: #fff;
-    margin: 5px;
-  }
-
-  #mobile-nav {
-    display: block;
-    position: relative;
-  }
-
-  .hamburger {
-    position: absolute;
-    cursor: pointer;
-    right: 5%;
-    top: 50%;
-    transform: translate(-5%, -50%);
-    z-index: 13;
-    display: block;
-  }
-  .nav-links {
-    position: fixed;
-    background: var(--accent-color);
-    height: 100vh;
-    width: 100%;
-    flex-direction: column;
-    z-index: 12;
-    clip-path: circle(100px at 90% -25%);
-    -webkit-clip-path: circle(1500px 90% -25%);
-    transition: all 1s ease-out;
-    pointer-events: none;
-  }
-
-  .nav-links.open {
-    clip-path: circle(100px at 90% -25%);
-    -webkit-clip-path: circle(1500px at 90% -25%);
-    pointer-events: all;
-  }
-
-  .nav-links li {
-    opacity: 0;
-  }
-
-  .nav-links li a {
-    font-size: 25px;
-    transition: color 0.5s;
-  }
-
-  .nav-links li a:hover {
-    color: rgba(255, 255, 255, 0.5);
-  }
-
-  .current-mobile {
-    color: rgba(255, 255, 255, 0.5) !important;
-  }
-
-  .nav-links li:nth-child(1) {
-    transition: all 0.5s ease 0.2s;
-  }
-
-  .nav-links li:nth-child(2) {
-    transition: all 0.5s ease 0.4s;
-  }
-
-  .nav-links li:nth-child(3) {
-    transition: all 0.5s ease 0.6s;
-  }
-
-  li.fade {
-    opacity: 1;
-  }
-
-  #nav {
-    display: none;
-  }
-
-  #about-nav {
-    display: none;
-  }
-}
-
 /***********************
 desktop nav
 ***********************/
@@ -439,7 +353,7 @@ second fold mobile
   height: 100vh;
   width: 100vw;
   display: grid;
-  margin: 30vh 0 30vh 0;
+  margin: 10vh 0 10vh 0;
   justify-content: center;
 }
 
@@ -1160,7 +1074,7 @@ media queries 1025px
   #model-0 {
     grid-area: model-0;
     height: 75%;
-    width: 55%;
+    width: 95%;
     margin-left: 10%;
     margin-top: -30%;
   }
@@ -1199,6 +1113,112 @@ media queries 850px
     left: 8%;
     margin-top: 52%;
     font-size: 3.5vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /*******************************************
+  https://www.youtube.com/watch?v=H4MkGzoACpQ
+  *******************************************/
+  #grid-container-1 {
+    top: -67px;
+  }
+
+  #grid-container-2-wrapper {
+    margin-top: -100px;
+  }
+
+  #grid-container-2 .container .card {
+    width: 90%;
+  }
+
+  .line {
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    margin: 5px;
+  }
+
+  #mobile-nav {
+    display: block;
+    position: relative;
+  }
+
+  .hamburger {
+    position: absolute;
+    cursor: pointer;
+    right: 5%;
+    top: 50%;
+    transform: translate(-5%, -50%);
+    z-index: 13;
+    display: block;
+  }
+  .nav-links {
+    position: fixed;
+    background: var(--accent-color);
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    z-index: 12;
+    clip-path: circle(100px at 90% -25%);
+    -webkit-clip-path: circle(1500px 90% -25%);
+    transition: all 1s ease-out;
+    pointer-events: none;
+  }
+
+  .nav-links.open {
+    clip-path: circle(100px at 90% -25%);
+    -webkit-clip-path: circle(1500px at 90% -25%);
+    pointer-events: all;
+  }
+
+  .nav-links li {
+    opacity: 0;
+  }
+
+  .nav-links li a {
+    font-size: 25px;
+    transition: color 0.5s;
+  }
+
+  .nav-links li a:hover {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .current-mobile {
+    color: rgba(255, 255, 255, 0.5) !important;
+  }
+
+  .nav-links li:nth-child(1) {
+    transition: all 0.5s ease 0.2s;
+  }
+
+  .nav-links li:nth-child(2) {
+    transition: all 0.5s ease 0.4s;
+  }
+
+  .nav-links li:nth-child(3) {
+    transition: all 0.5s ease 0.6s;
+  }
+
+  li.fade {
+    opacity: 1;
+  }
+
+  #nav {
+    display: none;
+  }
+
+  #about-nav {
+    display: none;
+  }
+
+  #part-6 .container-1 {
+    max-width: 90%;
+  }
+
+  #part-6 .container-2 {
+    max-width: 90%;
   }
 }
 
@@ -1299,6 +1319,18 @@ media queries 550px
   }
 }
 
+/**********************
+media queries 480px
+**********************/
+@media (max-width: 480px) {
+  #grid-container-1 {
+    margin-top: -100px;
+  }
+
+  #callNow {
+    margin-top: -190%;
+  }
+}
 /**********************
 media queries cell phone
 **********************/
