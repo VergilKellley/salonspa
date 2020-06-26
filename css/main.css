@@ -1118,6 +1118,10 @@ media queries 850px
   #style-gallery h2 {
     font-size: 30px;
   }
+
+  #grid-container-2 .container .card .face.face1 .content h3 {
+    font-size: 20px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -1333,6 +1337,26 @@ media queries 480px
 
   #callNow {
     margin-top: -190%;
+    left: 25%;
+  }
+
+  #phone4 {
+    left: 30%;
+  }
+
+  #grid-container-1 div h3 {
+    left: -15%;
+    font-size: 4vw;
+    margin-top: 124%;
+    width: 90%;
+  }
+
+  #grid-container-1 div h1 {
+    left: -69%;
+  }
+
+  #model-0 {
+    margin-left: -20%;
   }
 }
 /**********************
